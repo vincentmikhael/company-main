@@ -103,4 +103,9 @@ class DashboardController extends Controller
 
         return redirect()->back()->with('success','Deskripsi berhasil diubah');
     }
+
+    public function link(Request $request){
+        Main::where('id',1)->update($request->except(['_token']));
+        return redirect()->back()->with('success','Pengaturan link berhasil diubah');
+    }
 }

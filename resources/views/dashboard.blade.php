@@ -109,6 +109,7 @@
           <div class="card mb-4">
             <div class="card-header pb-0">
               <h6>Pengaturan icon paling atas</h6>
+              <small style="font-size: 12px">*Rekomendasi ukuran 70x70</small>
             </div>
             <div class="card-body px-4 pt-0 pb-2">
               <form action="/icon" method="POST" class="row" enctype="multipart/form-data">
@@ -141,6 +142,7 @@
           <div class="card mb-4">
             <div class="card-header pb-0">
               <h6>Pengaturan foto dan background banner</h6>
+              <small style="font-size: 12px">*Rekomendasi ukuran background 754x476 dan gambar png mobil 500x491</small>
             </div>
             <div class="card-body px-4 pt-0 pb-2">
             <form action="/banner" method="POST" class="row" enctype="multipart/form-data">
@@ -187,13 +189,49 @@
                 <div class="col-12 mt-4">
                 <button class="btn btn-primary">Submit</button>
                 </div>
-                
-                  
+              
               </form>
             </div>
           </div>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-12">
+          <div class="card mb-4">
+            <div class="card-header pb-0">
+              <h6>Pengaturan link url</h6>
+            </div>
+            <div class="card-body px-4 pt-0 pb-2">
+              <form action="/link" method="POST" class="row">
+                @csrf
+                <div class="col-md-6">
+                <label for="">Judul link 1</label>
+                <input type="text" value="{{$main->judul_link1}}" required class="form-control" name="judul_link1">
+                </div>
+                <div class="col-md-6">
+                  <label for="">Judul link 2</label>
+                  <input type="text" value="{{$main->judul_link2}}" required class="form-control" name="judul_link2">
+                </div>
+                <div class="col-md-6">
+                  <label for="">Link 1</label>
+                  <input type="text" value="{{$main->link1}}" required class="form-control" name="link1">
+                </div>
+                <div class="col-md-6">
+                  <label for="">Link 2</label>
+                  <input type="text" value="{{$main->link2}}" required class="form-control" name="link2">
+                </div>
+              
+                <div class="col-12 mt-4">
+                <button class="btn btn-primary">Submit</button>
+                </div>
+              
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <footer class="footer pt-3  ">
         <div class="container-fluid">
           <div class="row align-items-center justify-content-lg-between">

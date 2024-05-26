@@ -253,7 +253,7 @@ alt="Web-Stat site stats"></a></noscript>
             <div class="col-xs-2 col-sm-4">
                 <div class="hover1" style="cursor: pointer;" href="http://www.mitsubishi-motors.co.id/">
                     <div class="pos-relative">
-                        <div class="button-link button-left"><a id="btn-one" style="cursor:pointer;">KE SITUS MMKSI <span class="glyphicon glyphicon-menu-right"></span></a></div>
+                        <div class="button-link button-left"><a id="btn-one" style="cursor:pointer;">{{$main->judul_link1}}<span class="glyphicon glyphicon-menu-right"></span></a></div>
                         <img id="left-tri" src="{{asset('images/'.$main->bg1)}}" class="" style="width: 754px; opacity: 1;">
                         <img id="pajero-car" src="{{asset('images/'.$main->mobil1)}}" class="" >
                     </div>
@@ -269,7 +269,7 @@ alt="Web-Stat site stats"></a></noscript>
             <div class="col-xs-2 col-sm-4">
                 <div class="hover2" style="cursor: pointer;">
                     <div class="pos-relative">
-                        <div class="button-link button-right"><a id="btn-two" style="cursor:pointer;">KE SITUS KTB FUSO <span class="glyphicon glyphicon-menu-right"></span></a></div>
+                        <div class="button-link button-right"><a id="btn-two" style="cursor:pointer;">{{$main->judul_link2}}<span class="glyphicon glyphicon-menu-right"></span></a></div>
                         <div style="position: relative;">
                             <img id="right-tri" src="{{asset('images/'.$main->bg2)}}" class="" style="width: 767px; opacity: 1;">
                         </div>
@@ -379,12 +379,12 @@ $(document).ready(function(){
     //Redirect link on click
     $('.hover1').click(function(e){
 	e.preventDefault();
-        window.open ('http://www.mitsubishi-motors.co.id/');
+        window.open ('{{$main->link1}}');
 		console.log('x');
     });
     $('.hover2').click(function(e){
 	e.preventDefault();
-        window.open ('http://www.ktbfuso.co.id/');
+        window.open ('{{$main->link2}}');
     });
 
 });

@@ -26,3 +26,4 @@ Route::post('/banner',[DashboardController::class,'banner']);
 Route::post('/deskripsi',[DashboardController::class,'deskripsi']);
 Route::get('/seo',[SeoController::class,'index']);
 Route::post('/seo_action',[SeoController::class,'post']);
+Route::post('/link',[DashboardController::class,'link']);
