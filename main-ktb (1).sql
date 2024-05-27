@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 19, 2024 at 05:08 PM
+-- Generation Time: May 27, 2024 at 01:56 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -41,15 +41,19 @@ CREATE TABLE `main` (
   `meta_title` varchar(255) NOT NULL,
   `meta_deskripsi` varchar(255) NOT NULL,
   `meta_sitename` varchar(255) NOT NULL,
-  `icon_website` varchar(255) NOT NULL
+  `icon_website` varchar(255) NOT NULL,
+  `judul_link1` varchar(255) NOT NULL,
+  `link1` varchar(255) NOT NULL,
+  `judul_link2` varchar(255) NOT NULL,
+  `link2` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `main`
 --
 
-INSERT INTO `main` (`id`, `icon1`, `icon2`, `icon3`, `bg1`, `bg2`, `mobil1`, `mobil2`, `deskripsi`, `title`, `meta_title`, `meta_deskripsi`, `meta_sitename`, `icon_website`) VALUES
-(1, '1716098924.png', '1716098935.png', '1716098926.png', '1716099032.png', '1716099033.png', '1716099054.png', '1716099055.png', '<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in</p><ul><li>Lorem ipsum sit dolor amet</li><li><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text</li></ul>', 'Caldwell Moody', 'Libby Wells', 'Kiara Page', 'Lars Mcguire', '1716115541.png');
+INSERT INTO `main` (`id`, `icon1`, `icon2`, `icon3`, `bg1`, `bg2`, `mobil1`, `mobil2`, `deskripsi`, `title`, `meta_title`, `meta_deskripsi`, `meta_sitename`, `icon_website`, `judul_link1`, `link1`, `judul_link2`, `link2`) VALUES
+(1, '1716098924.png', '1716098935.png', '1716098926.png', '1716099032.png', '1716099033.png', '1716099054.png', '1716099055.png', '<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in</p><ul><li>Lorem ipsum sit dolor amet</li><li><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text</li></ul>', 'Caldwell Moody', 'Libby Wells', 'Kiara Page', 'Lars Mcguire', '1716115541.png', 'KE SITUS MMKSI', 'https://web1.com', 'KE SITUS KTB FUSO', 'https://web2.com');
 
 --
 -- Indexes for dumped tables
