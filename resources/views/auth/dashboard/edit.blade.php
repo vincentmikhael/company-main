@@ -18,22 +18,33 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
   <title>
     Dashboard
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->
-  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
-  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="/assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="/assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="/assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
-  <link id="pagestyle" href="assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+  <link id="pagestyle" href="/assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
   <script src="https://cdn.ckeditor.com/4.22.1/basic/ckeditor.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<style>
+    .field-icon {
+  float: right;
+  margin-right: 10px;
+  margin-top: -25px;
+  position: relative;
+  z-index: 2;
+}
+</style>
+
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
@@ -42,7 +53,7 @@
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
       <a class="navbar-brand m-0" href="#">
-        <img src="../assets/img/logo-ct-dark.png" class="navbar-brand-img h-100" alt="main_logo">
+        <img src="/assets/img/logo-ct-dark.png" class="navbar-brand-img h-100" alt="main_logo">
         <span class="ms-1 font-weight-bold">Dashboard</span>
       </a>
     </div>
@@ -124,124 +135,38 @@
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Pengaturan icon paling atas</h6>
-              <small style="font-size: 12px">*Rekomendasi ukuran 70x70</small>
+              <h6>Tambah users</h6>
             </div>
             <div class="card-body px-4 pt-0 pb-2">
-              <form action="/icon" method="POST" class="row" enctype="multipart/form-data">
-                @csrf
-                <div class="col-md-6">
-                  <label for="">Icon 1</label>
-                  <input type="file" name="icon1" class="form-control">
-                </div>
-                <div class="col-md-6">
-                  <label for="">Icon 2</label>
-                  <input type="file" name="icon2" class="form-control">
-                </div>
-                <div class="col-md-6">
-                  <label for="">Icon 3</label>
-                  <input type="file" name="icon3" class="form-control">
-                </div>
-                <div class="col-12 mt-4">
-                <button class="btn btn-primary">Submit</button>
-                </div>
-                
-                  
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-12">
-          <div class="card mb-4">
-            <div class="card-header pb-0">
-              <h6>Pengaturan foto dan background banner</h6>
-              <small style="font-size: 12px">*Rekomendasi ukuran background 754x476 dan gambar png mobil 500x491</small>
-            </div>
-            <div class="card-body px-4 pt-0 pb-2">
-            <form action="/banner" method="POST" class="row" enctype="multipart/form-data">
+            <form method="POST" action="" class="row" enctype="multipart/form-data">
               @csrf
-                <div class="col-md-6">
-                  <label for="">Background kiri</label>
-                  <input type="file" name="bg1" class="form-control">
+                <div class="col-md-12">
+                  <label for="">Username</label>
+                  <input type="text" class="form-control" value="{{$user->username}}" name="username">
+                  @error('username')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                 </div>
-                <div class="col-md-6">
-                  <label for="">Backgrpund kanan</label>
-                  <input type="file" name="bg2" class="form-control">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Password</label>
+                        <div class="col-md-12">
+                          <input id="password-field" type="password" class="form-control @error('password') is-invalid @enderror" name="password">
+                          <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                        </div>
+                      </div>
+                  @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                 </div>
-                <div class="col-md-6">
-                  <label for="">Mobil kiri</label>
-                  <input type="file" name="mobil1" class="form-control">
-                </div>
-                <div class="col-md-6">
-                  <label for="">Mobil kanan</label>
-                  <input type="file" name="mobil2" class="form-control">
-                </div>
+  
                 <div class="col-12 mt-4">
                 <button class="btn btn-primary">Submit</button>
-                </div>
-                
-                  
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="card mb-4">
-            <div class="card-header pb-0">
-              <h6>Pengaturan content writing</h6>
-            </div>
-            <div class="card-body px-4 pt-0 pb-2">
-              <form action="/deskripsi" method="POST" class="row">
-                @csrf
-                <div class="col-12">
-                <textarea name="editor1">{{$main->deskripsi}}</textarea>
-                </div>
-              
-                <div class="col-12 mt-4">
-                <button class="btn btn-primary">Submit</button>
-                </div>
-              
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-12">
-          <div class="card mb-4">
-            <div class="card-header pb-0">
-              <h6>Pengaturan link url</h6>
-            </div>
-            <div class="card-body px-4 pt-0 pb-2">
-              <form action="/link" method="POST" class="row">
-                @csrf
-                <div class="col-md-6">
-                <label for="">Judul link 1</label>
-                <input type="text" value="{{$main->judul_link1}}" required class="form-control" name="judul_link1">
-                </div>
-                <div class="col-md-6">
-                  <label for="">Judul link 2</label>
-                  <input type="text" value="{{$main->judul_link2}}" required class="form-control" name="judul_link2">
-                </div>
-                <div class="col-md-6">
-                  <label for="">Link 1</label>
-                  <input type="text" value="{{$main->link1}}" required class="form-control" name="link1">
-                </div>
-                <div class="col-md-6">
-                  <label for="">Link 2</label>
-                  <input type="text" value="{{$main->link2}}" required class="form-control" name="link2">
-                </div>
-              
-                <div class="col-12 mt-4">
-                <button class="btn btn-primary">Submit</button>
-                </div>
-              
+                </div> 
               </form>
             </div>
           </div>
@@ -262,10 +187,10 @@
   </main>
 
   <!--   Core JS Files   -->
-  <script src="../assets/js/core/popper.min.js"></script>
-  <script src="../assets/js/core/bootstrap.min.js"></script>
-  <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="/assets/js/core/popper.min.js"></script>
+  <script src="/assets/js/core/bootstrap.min.js"></script>
+  <script src="/assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="/assets/js/plugins/smooth-scrollbar.min.js"></script>
 
   <script>
                 CKEDITOR.replace( 'editor1' );
@@ -282,7 +207,23 @@
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+  <script src="/assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+  <script>
+    document.querySelectorAll('.toggle-password').forEach(function(element) {
+  element.addEventListener('click', function() {
+    this.classList.toggle('fa-eye');
+    this.classList.toggle('fa-eye-slash');
+    
+    var input = document.querySelector(this.getAttribute('toggle'));
+    if (input.getAttribute('type') === 'password') {
+      input.setAttribute('type', 'text');
+    } else {
+      input.setAttribute('type', 'password');
+    }
+  });
+});
+
+</script>
 </body>
 
 </html>

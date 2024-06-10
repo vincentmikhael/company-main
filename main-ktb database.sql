@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 07, 2024 at 07:10 PM
+-- Generation Time: Jun 10, 2024 at 02:00 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -145,9 +145,7 @@ CREATE TABLE `personal_access_tokens` (
 
 CREATE TABLE `users` (
   `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -158,8 +156,9 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@main.com', NULL, '$2y$12$s1yMMH.WUFcHlmZ70RQ67etrKtmHMhEs.ADn8QYwxL6hW0zFPyYga', NULL, '2024-06-07 12:09:15', '2024-06-07 12:09:15');
+INSERT INTO `users` (`id`, `username`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'superadmin', '$2y$12$z9Hxm2a3KXdiJxpNBIvh2OOsk.7/tPRxjDRS2wFHHl8XqRC5if8T.', NULL, '2024-06-07 12:09:15', '2024-06-10 07:00:16'),
+(2, 'Vincent', '$2y$12$v.1zSW3IQ4YYGlWeNRwUE.JosjkELpc/OqbcAla3YbxdBkIHLCB9C', NULL, '2024-06-09 09:03:03', '2024-06-09 09:51:14');
 
 --
 -- Indexes for dumped tables
@@ -208,8 +207,7 @@ ALTER TABLE `personal_access_tokens`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -243,7 +241,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
