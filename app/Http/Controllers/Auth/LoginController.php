@@ -34,6 +34,11 @@ class LoginController extends Controller
     ]);
 }
 
+    protected function loggedOut(Request $request)
+    {
+        return redirect('/login'); // Ganti '/' dengan URL yang Anda inginkan
+    }
+
     /**
      * Where to redirect users after login.
      *
