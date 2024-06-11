@@ -287,10 +287,10 @@ alt="Web-Stat site stats"></a></noscript>
         </div>
     </div>
     <div style="position: relative;">
-        <div id="backtop">
+        <a href="#container-top" id="backtop">
             <div id="arrow2" class=""><img src="https://ktb.co.id/sources/images/forma.png"></div>
             <div>BACK TO TOP</div>
-        </div>
+        </a>
     </div>
     <div class="container" style="margin: 20px auto;">
         <div class="row">
