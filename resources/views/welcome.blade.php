@@ -240,11 +240,14 @@ alt="Web-Stat site stats"></a></noscript>
 <!-- End Web-Stat code v 6.3 -->
 
     <div id="container-top" class="container">
-        <div class="row">
-            <div class="col-xs-12 img-logo" style="text-align: right; vertical-align: bottom;">
-                <img src="{{asset('images/'.$main->icon1)}}" style="float: left;">
-                <img src="{{asset('images/'.$main->icon2)}}" style="">
-                <img src="{{asset('images/'.$main->icon3)}}" style="margin-left: 10px">
+        <div class="">
+            <div style="justify-content: space-between; align-items: center; display: flex;">
+              <div><img src="{{asset('images/'.$main->icon1)}}"></div>
+              <div><img src="{{asset('images/'.$main->icon2)}}"></div>
+              <div><img src="{{asset('images/'.$main->icon3)}}"></div>
+                
+                
+                
             </div>                 
         </div>
     </div>
@@ -253,8 +256,8 @@ alt="Web-Stat site stats"></a></noscript>
             <div class="col-xs-2 col-sm-4">
                 <div class="hover1" style="cursor: pointer;" href="http://www.mitsubishi-motors.co.id/">
                     <div class="pos-relative">
-                        <div class="button-link button-left"><a id="btn-one" style="cursor:pointer;">{{$main->judul_link1}}<span class="glyphicon glyphicon-menu-right"></span></a></div>
-                        <img id="left-tri" src="{{asset('images/'.$main->bg1)}}" class="" style="width: 754px; opacity: 1;">
+                        <div class="button-link button-left"><a id="btn-one" style="cursor:pointer; justify-content: space-between; display: flex; align-items: center; text-align: center;">{{$main->judul_link1}} <span style="margin-left: 1px; position: static !important;" class="glyphicon glyphicon-menu-right"></span></a></div>
+                        <img id="left-tri" src="{{asset('images/'.$main->bg1)}}" class="" style="width: 767px; opacity: 1;">
                         <img id="pajero-car" src="{{asset('images/'.$main->mobil1)}}" class="" >
                     </div>
                 </div>
@@ -269,7 +272,7 @@ alt="Web-Stat site stats"></a></noscript>
             <div class="col-xs-2 col-sm-4">
                 <div class="hover2" style="cursor: pointer;">
                     <div class="pos-relative">
-                        <div class="button-link button-right"><a id="btn-two" style="cursor:pointer;">{{$main->judul_link2}}<span class="glyphicon glyphicon-menu-right"></span></a></div>
+                        <div class="button-link button-right"><a id="btn-two" style="cursor:pointer; justify-content: space-between; display: flex; align-items: center; text-align: center;">{{$main->judul_link2}} <span style="margin-left: 1px; position: static !important;" class="glyphicon glyphicon-menu-right"></span></a></div>
                         <div style="position: relative;">
                             <img id="right-tri" src="{{asset('images/'.$main->bg2)}}" class="" style="width: 767px; opacity: 1;">
                         </div>
